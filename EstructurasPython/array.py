@@ -18,7 +18,3 @@ class Array:
     
     def __setitem__(self, index, new_item):
         self.items[index] = new_item
-
-if __name__ == "__main__":
-    menu = Array(5)
-    print(len(menu))
