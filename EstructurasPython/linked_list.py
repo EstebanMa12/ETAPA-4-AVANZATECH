@@ -38,6 +38,20 @@ class LinkedList:
         
         self.size -= 1
         return deletedNode
+    
+    def insert(self, value, position):
+        myNode  = Node(value)
+        if position == 0:
+            myNode.next = self.first 
+            self.first = myNode
+        else: 
+            current = self.first
+            k=1
+            while current.next is not None and k < position:
+                current = current.next
+                k +=1
+            myNode.next  = current.next
+            current.next = myNode
 
     def __len__(self):
         return self.size
@@ -64,3 +78,6 @@ if __name__ == "__main__":
     print(myList)
 
     myList.remove(10)
+
+    myList.insert('A', 3)
+    print(myList)
