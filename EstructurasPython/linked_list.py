@@ -25,13 +25,17 @@ class LinkedList:
         
         else:
             current = self.first
-            while current.next.data != value:
-                if current.next == None:
-                    return False
-                else:
-                    current = current.next
-            deletedNode = current.next
-            current.next = deletedNode.next
+            try: 
+                while current.next.data != value:
+                    if current.next == None:
+                        return False
+                    else:
+                        current = current.next
+                deletedNode = current.next
+                current.next = deletedNode.next
+            except AttributeError:
+                return False  
+        
         self.size -= 1
         return deletedNode
 
@@ -41,11 +45,13 @@ class LinkedList:
     def __str__(self):
         string = "["
         current = self.first
-        while current is not None:
+        for i in range(len(self)):
             string += str(current)
-            string += str(", ")
+            if i != len(self)-1:
+                string += str(", ")
             current = current.next
         string += "]"
+
         return string
 
 
@@ -56,3 +62,5 @@ if __name__ == "__main__":
     myList.append(3)
 
     print(myList)
+
+    myList.remove(10)
