@@ -43,7 +43,7 @@ class LinkedList:
         current = self.first
         while current is not None:
             string += str(current)
-            string += str(",")
+            string += str(", ")
             current = current.next
         string += "]"
         return string
