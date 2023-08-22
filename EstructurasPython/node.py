@@ -6,3 +6,8 @@ class Node:
 
     def __str__(self):
         return str(self.data)
+
+class TwoWayNode(Node):
+    def __init__(self, data, previus=None, next=None):
+        super().__init__(self,data,next)
+        self.previus = previus
