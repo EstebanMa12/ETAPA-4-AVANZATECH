@@ -35,7 +35,6 @@ class LinkedList:
                 current.next = deletedNode.next
             except AttributeError:
                 return False  
-        
         self.size -= 1
         return deletedNode
     
