@@ -45,5 +45,31 @@ class DoubleLinkedList:
                 print(f"Prev({current.previus}) --> Current({current}) --> Next({current.next})") 
                 current = current.next
 
+    def insert(self, data, position):
+        newNode = TwoWayNode(data)
+        if position ==0:
+            newNode.next = self.head
+            self.head.previus = newNode
+            self.head=newNode
+        elif position == self.size:
+            self.tail.next = newNode
+            newNode.previus = self.tail
+            self.tail = newNode
+
+        else:
+            count =1
+            current  = self.head
+            while current.next is not None and count < position:
+                current = current.next
+                count += 1
+            newNode.next = current.next
+            newNode.previus = current
+            current.next = newNode
+            current.next.previus = newNode
+
+
+        self.size +=1
+
+
 
         
