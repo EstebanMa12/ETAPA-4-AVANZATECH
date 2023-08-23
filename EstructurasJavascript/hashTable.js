@@ -42,7 +42,28 @@ class HashTable {
         }
         }
         return undefined;
-}
+    }
+    delete(key) {
+        //* obtengo el hash del address
+        const address = this.hashMethod(key)
+        //* Obtengo el bucket donde debo buscar el espacio a eliminar
+        const currentBucket = this.data[address]
+    
+        if (currentBucket) {
+          //* recorriendo el espacio
+          for (let i = 0; i < currentBucket.length; i++) {
+            if (currentBucket[i][0] === key) {
+              //* guardo el espacio para retornarlo luego
+              let deletedSpace = currentBucket[i]
+              //* elimino el espacio
+              delete currentBucket[i]
+              //* elimino el espacio vacio para que los demas espacios recorran
+              currentBucket.splice(i, 1)
+              return deletedSpace
+            }
+          }
+        }
+      }
 }
 
 const myHashTable = new HashTable(50);
@@ -54,3 +75,6 @@ console.log(myHashTable.get('apples'));
 console.log(myHashTable.get('oranges'));
 console.log(myHashTable.remove('apples'));
 console.log(myHashTable.get('apples'));
+console.log(myHashTable.delete('grapes'));
+console.log(myHashTable.get('grapes'));
+console.log(myHashTable.delete('oranges'));
