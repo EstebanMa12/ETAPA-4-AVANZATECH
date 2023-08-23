@@ -33,6 +33,34 @@ class MyArray {
         delete this.data[this.length - 1]
         this.length--;
     }
+    unshift(item) {
+        if (!item) {
+            return this.length
+        }
+        if (this.length !== 0) {
+            for (let i = this.length - 1; i >= 0; i--){
+            this.data[i+1] = this.data[i]
+            }
+        }
+        this.data[0] = item
+        this.length++
+        return this.length
+        // Tu código aquí 👈  
+    }
+    shift(){
+        if (this.length == 0) {
+            return undefined
+        } else {
+            const deletedNumber = this.data[0]
+            for (let i = 0; i < this.length; i++){
+            this.data[i] = this.data[i+1]
+            }
+            delete this.data[length - 1]
+            this.length--
+            return deletedNumber
+        }
+        
+    }
 }
 
 const myArray = new MyArray();
