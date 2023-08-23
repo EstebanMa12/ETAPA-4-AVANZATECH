@@ -9,5 +9,5 @@ class Node:
 
 class TwoWayNode(Node):
     def __init__(self, data, previus=None, next=None):
-        super().__init__(self,data,next)
+        super().__init__(data,next)
         self.previus = previus
