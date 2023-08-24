@@ -64,6 +64,18 @@ class HashTable {
           }
         }
       }
+      getAllKeys(){
+        const keys = []
+        for (let i = 0; i < this.data.length; i++) {
+            if (this.data[i]) {
+                for (let j =0; j < this.data[i].length;j++){
+                    console.log(this.data[i][j]);
+                    keys.push(this.data[i][j][0])
+                }
+          }
+        }
+        return keys
+      }
 }
 
 const myHashTable = new HashTable(50);
@@ -73,8 +85,7 @@ console.log(myHashTable.set('oranges', 999));
 console.log(myHashTable.get('grapes'));
 console.log(myHashTable.get('apples'));
 console.log(myHashTable.get('oranges'));
-console.log(myHashTable.remove('apples'));
-console.log(myHashTable.get('apples'));
-console.log(myHashTable.delete('grapes'));
-console.log(myHashTable.get('grapes'));
 console.log(myHashTable.delete('oranges'));
+console.log(myHashTable.get('oranges'));
+console.log(myHashTable.getAllKeys());
+console.log(myHashTable.data);
