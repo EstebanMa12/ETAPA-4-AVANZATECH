@@ -44,4 +44,8 @@ console.log(MyQueue.enqueue('Joy'))
 console.log(MyQueue.enqueue('Matt'))
 console.log(MyQueue.enqueue('Pavel'))
 console.log(MyQueue.dequeue());
-console.log(MyQueue.peek());
+console.log(MyQueue.peek()
+
+
+
+);
