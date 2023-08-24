@@ -56,3 +56,7 @@ class MyDoublyLinkedList {
     }
 }
 
+const myDoublyList = new MyDoublyLinkedList(1);
+console.log(myDoublyList);
+myDoublyList.append(3);
+console.log(myDoublyList);
