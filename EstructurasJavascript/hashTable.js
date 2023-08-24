@@ -51,20 +51,20 @@ class HashTable {
     
         if (currentBucket) {
           //* recorriendo el espacio
-          for (let i = 0; i < currentBucket.length; i++) {
-            if (currentBucket[i][0] === key) {
-              //* guardo el espacio para retornarlo luego
-              let deletedSpace = currentBucket[i]
-              //* elimino el espacio
-              delete currentBucket[i]
-              //* elimino el espacio vacio para que los demas espacios recorran
-              currentBucket.splice(i, 1)
-              return deletedSpace
-            }
+            for (let i = 0; i < currentBucket.length; i++) {
+                if (currentBucket[i][0] === key) {
+                //* guardo el espacio para retornarlo luego
+                    let deletedSpace = currentBucket[i]
+                //* elimino el espacio
+                    delete currentBucket[i]
+                //* elimino el espacio vacio para que los demas espacios recorran
+                    currentBucket.splice(i, 1)
+                    return deletedSpace
+                }
           }
         }
       }
-      getAllKeys(){
+    getAllKeys(){
         const keys = []
         for (let i = 0; i < this.data.length; i++) {
             if (this.data[i]) {
