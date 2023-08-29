@@ -76,7 +76,6 @@ if __name__=='__main__':
     print(len(a1))
     print(a1[0])
     a1[0] = 'B'
-    print(a1[0])
     print(a1.remove(position = 3))
     print(a1.remove(value = "A"))
     print(a1.insert('C', 3))
