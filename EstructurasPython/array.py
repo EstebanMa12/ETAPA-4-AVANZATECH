@@ -59,7 +59,14 @@ class Array:
             start += 1
             end -= 1
         return self.items
+    def reverseRecursive(self, start=0, end=None):
+        if end is None:
+            end = len(self.items)-1
 
+        if start < end:
+            self.items[start], self.items[end] = self.items[end], self.items[start]
+            self.reverseRecursive(start +1, end -1)
+        return self.items
 
 
 
@@ -78,6 +85,7 @@ if __name__=='__main__':
     print(a1.reverseLoop())
     print(a1.reverseLoop(2, 5))
     print(a1.reverseLoop(start=3))
+    print(a1.reverseRecursive())
     
 
 
