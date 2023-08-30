@@ -1,10 +1,12 @@
 import random
 def binarySearch(array, target):
     low = 0; high = len(array) - 1
+    counter=0
     while low <= high:
         mid = (low + high)//2
+        counter +=1
         if array[mid] == target:
-            return mid
+            return mid, counter
         elif array[mid] < target:
             low = mid + 1
         else:
