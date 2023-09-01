@@ -51,6 +51,10 @@ class LinkedList:
                 k +=1
             myNode.next  = current.next
             current.next = myNode
+        self.size +=1
+
+    def reverse(self):
+        pass
 
     def __len__(self):
         return self.size
