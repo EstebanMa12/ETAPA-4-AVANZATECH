@@ -54,8 +54,34 @@ class LinkedList:
         self.size +=1
         return myNode
 
-    def reverse(self):
-        pass
+    def reverse(self, start=0, end= None):
+        if end is None:
+            end = len(self)-1
+        if start == end:
+            return self.__str__()
+        
+        current = self.first
+        previous = None
+        count = 0
+        while count < start:
+            previous = current
+            current = current.next
+            count +=1
+
+        tail = current
+        head = None
+        while count <= end:
+            current.next , previous, current = previous, current, current.next
+            count +=1
+
+        if previous:
+            previous.next = head
+        else:
+            self.first = previous
+
+
+        return self.__str__()
+        
 
     def __len__(self):
         return self.size
@@ -85,3 +111,7 @@ if __name__ == "__main__":
 
     myList.insert('A', 3)
     print(myList)
+    print(myList.reverse())
+    print(myList.insert("B",2))
+    print(myList)
+    print(myList.reverse(1,3))

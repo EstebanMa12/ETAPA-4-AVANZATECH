@@ -1,4 +1,7 @@
 {
-    "vscode-pets.petType": "dog",
-    "vscode-pets.position": "explorer"
+    "vscode-pets.petType":"fox",
+    "vscode-pets.position": "explorer",
+    "vscode-pets.petColor": "white",
+    "vscode-pets.petSize":"medium",
+    "vscode-pets.theme": "castle"
 }
