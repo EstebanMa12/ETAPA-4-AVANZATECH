@@ -63,21 +63,22 @@ class LinkedList:
         current = self.first
         previous = None
         count = 0
-        while count < start:
+        while count  < start :
             previous = current
             current = current.next
             count +=1
 
         tail = current
-        head = None
+        tailPrev= previous
         while count <= end:
             current.next , previous, current = previous, current, current.next
             count +=1
-
-        if previous:
-            previous.next = head
-        else:
+            
+        if start == 0:
             self.first = previous
+        else:
+            tailPrev.next = previous
+        tail.next = current 
 
 
         return self.__str__()
@@ -104,14 +105,15 @@ if __name__ == "__main__":
     myList.append(1)
     myList.append(2)
     myList.append(3)
-
-    print(myList)
-
-    myList.remove(10)
-
+    myList.append(4)
     myList.insert('A', 3)
-    print(myList)
-    print(myList.reverse())
-    print(myList.insert("B",2))
-    print(myList)
-    print(myList.reverse(1,3))
+    # print(f"reversa completa {myList.reverse()}")
+    # print(myList.insert("B",2))
+    myList.append(7)
+    myList.append(8)
+    myList.append(9)
+    myList.append(10)
+    print(f"Sin reversa xd  {myList}")
+    print(f"Reversa sublist {myList.reverse(3,)}")
+    # print(f"Reverse         {myList.reverse(0,4)}")
+
