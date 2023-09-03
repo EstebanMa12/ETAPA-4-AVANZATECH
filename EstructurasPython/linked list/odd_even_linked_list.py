@@ -17,14 +17,16 @@ def odd_even_list(head):
     return head
 
 if __name__ == "__main__":
-    my_ll = LinkedList()
-    my_ll.add(1)
-    my_ll.add(2)
-    my_ll.add(3)
-    my_ll.add(4)
-    my_ll.add(5)
-    my_ll.add(6)
-    my_ll.add(7)
-    my_ll.add(8)
-    my_ll.add(9)
-    my_ll.add(10)
+    from linked_list import LinkedList
+    myList = LinkedList()
+    myList.append(1)
+    myList.append(2)
+    myList.append(3)
+    myList.append(4)
+    myList.append(5)
+    myList.append(6)
+    myList.append(7)
+    myList.append(8)
+    odd_even_list(myList.first)
+    print(myList)
+
