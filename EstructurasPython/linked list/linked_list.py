@@ -79,8 +79,6 @@ class LinkedList:
         else:
             tailPrev.next = previous
         tail.next = current 
-
-
         return self.__str__()
         
 
