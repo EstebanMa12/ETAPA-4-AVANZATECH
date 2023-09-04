@@ -16,8 +16,6 @@ def isPalindrome(head):
     while fast and fast.next:
         slow = slow.next
         fast = fast.next.next
-    if fast:
-        slow = slow.next
     slow = reverse(slow)
     while slow:
         if slow.data != head.data:
@@ -34,6 +32,6 @@ if __name__ == "__main__":
     myList.append(3)
     myList.append(4)
     myList.append(3)
-    myList.append(2)
+    myList.append(3)
     myList.append(1)
     print(isPalindrome(myList.first))
