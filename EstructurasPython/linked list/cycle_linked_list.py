@@ -1,6 +1,5 @@
 def cycleLl(head):
-    if not head or not head.next:
-        return False
+    if not head or not head.next: return False
     slow = head
     fast = head.next
     while slow != fast:
