@@ -27,8 +27,14 @@ def mergeSort(array):
             i += 1
             j += 1
 if __name__ == "__main__":
+    from insertionSort import insertionSort
+    from quickSort import quickSort
+    import timeit
     b = int(input("Ingrese el tamaño de la lista: "))
     array = [random.randint(0,100) for _ in range(b)]
-    print(array)
-    mergeSort(array)
-    print(array) # 4
+    # print(array)
+    # mergeSort(array)
+    # print(array) # 4
+    print(timeit.timeit(lambda: mergeSort(array), number=1))
+    print(timeit.timeit(lambda: insertionSort(array), number=1))
+    print(timeit.timeit(lambda: quickSort(array), number=1))
