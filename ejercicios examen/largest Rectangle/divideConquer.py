@@ -20,8 +20,10 @@ def div_and_conquer_method(array):
         minHeight = min(minHeight,array[left])
       maxArea = max(maxArea,(right-left+1)*minHeight)
     return maxArea
+  if len(array) == 0:
+    return 0
   return divide_and_conquer(array,0,len(array)-1)
 
 if __name__=="__main__":
-  array = [2,1,6,6,2,3]
+  array = []
   print(div_and_conquer_method(array))
