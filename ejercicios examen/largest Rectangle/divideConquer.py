@@ -25,5 +25,5 @@ def div_and_conquer_method(array):
   return divide_and_conquer(array,0,len(array)-1)
 
 if __name__=="__main__":
-  array = []
+  array = [1,2,3,4]
   print(div_and_conquer_method(array))

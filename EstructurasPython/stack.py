@@ -36,6 +36,17 @@ class Stack:
     def clear(self):
         while self.top:
             self.pop()
+    def recursiveReverse(self):
+        if self.top:
+            store_data= self.top.data
+            self.pop()
+            self.recursiveReverse()
+            self.push(store_data)
+            return self.__str__
+        else:
+            return None
+
+
 
     def __str__(self):
         string = "["
@@ -59,4 +70,5 @@ if __name__=="__main__":
     print(food)
     food.pop()
     print(food)
-    food.peek()
+    print(food.peek())
+    print(food.recursiveReverse())
