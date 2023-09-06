@@ -24,7 +24,7 @@ if __name__=="__main__":
   import timeit
 
   array = [2,1,6,6,2,3, 9, 9, 8]
-  # 
+  print(bruteForceAlgorithm(array))
   
 
   
