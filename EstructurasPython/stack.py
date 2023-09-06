@@ -36,6 +36,7 @@ class Stack:
     def clear(self):
         while self.top:
             self.pop()
+            
     def recursiveReverse(self):
         if self.top:
             store_data= self.top.data
