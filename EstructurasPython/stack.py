@@ -43,9 +43,9 @@ class Stack:
             self.pop()
             self.recursiveReverse()
             self.push(store_data)
-            return self.__str__
         else:
             return None
+        return self.__str__
 
 
 
