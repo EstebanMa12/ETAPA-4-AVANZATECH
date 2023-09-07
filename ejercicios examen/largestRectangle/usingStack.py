@@ -35,7 +35,7 @@ class Stack:
         if self.top:
             return self.top.data
         else:
-            return "Nothing"
+            return None
     def __str__(self):
         string = "["
         current = self.top
@@ -54,7 +54,6 @@ def largestRectangleArea(heights):
     i = 0
     while i < len(heights):
         if stack.size == 0 or heights[stack.peek()] <= heights[i]:
-            print(f"h {stack.peek()}")
             stack.push(i)
             i += 1
             print(f"Round {i} Stack = > {stack}")
@@ -65,6 +64,7 @@ def largestRectangleArea(heights):
             else:
                 area = heights[top] * (i - stack.peek() - 1)
             maxArea = max(maxArea, area)
+            print(f"max area {maxArea}")
     while stack.size != 0:
         top = stack.pop()
         if stack.size == 0:
@@ -72,8 +72,9 @@ def largestRectangleArea(heights):
         else:
             area = heights[top] * (i - stack.peek() - 1)
         maxArea = max(maxArea, area)
+        print(f"max area {maxArea}")
     return maxArea
 
 if __name__ == "__main__":
-    heights = [2,1,5,8,8,8,8]
+    heights = [0,5,6,6,8,8]
     print(largestRectangleArea(heights))
